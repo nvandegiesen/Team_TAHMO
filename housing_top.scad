@@ -1,8 +1,8 @@
 $fn=64;
 union ()//totaal
 {
-    
-	difference ()
+
+difference ()
     {
        minkowski()
     {
@@ -10,10 +10,10 @@ union ()//totaal
     cylinder(r=2,h=2);
     }
     
-    translate ([2,2,2])
+    translate ([2,2,3])//onderplaat gat
     minkowski()
     {
-    cube([106,106,55]);//onderplaat gat
+    cube([106,106,55]);
     cylinder(r=2,h=2); 
     }
     translate ([30,50.5,-1])//zonnepaneeltje
@@ -21,7 +21,7 @@ union ()//totaal
     }
 
       
-
+  
     difference ()// hoek cylinder 1
     {
     translate ([104,6,2])
@@ -32,8 +32,6 @@ union ()//totaal
        
     }
     
-
-
     difference ()//hoek cylinder 2
     {
     translate ([6,6,2])
@@ -61,31 +59,22 @@ union ()//totaal
     cylinder (r=1, h =33);
        
     }
-
-
-
-
         difference ()//cylinder voor gps
     {
     translate ([105,20,2])
-    cylinder (r=5.1, h=10);
+    cylinder (r=5, h=10);
     
     translate ([105,20,2])
     cylinder (r=1, h=11);
     }
-
- 
-
-        difference ()//cylinder voor gps2
+         difference ()//cylinder voor gps2
     {
     translate ([105,89.8,2])
-    cylinder (r=5.1, h=10);
+    cylinder (r=5, h=10);
     
     translate ([105,89.8,2])
     cylinder (r=1, h=11);
     }
-
-
              difference ()//cylinder voor gps3
     {
     translate ([35.2,89.8,2])
@@ -94,8 +83,6 @@ union ()//totaal
     translate ([35.2,89.8,2])
     cylinder (r=1, h=11);
     }
-
-
                  difference ()//cylinder voor gps4
     {
     translate ([35.2,20,2])
@@ -104,6 +91,54 @@ union ()//totaal
     translate ([35.2,20,2])
     cylinder (r=1, h=11);
     }
-
-
+    
+        difference ()// extra support
+    {
+    translate ([0,0,2])
+    cube ([8,8,50]);
+    
+    translate ([6,6,20])
+    cylinder (r=1, h =33);
+       
+    }
+    
+            difference ()// extra support
+    {
+    translate ([103,0,2])
+    cube ([8,8,50]);
+    
+    translate ([104,6,20])
+    cylinder (r=1, h =33);
+       
+    }
+           difference ()// extra support
+    {
+    translate ([0,103,2])
+    cube ([8,8,50]);
+    
+    translate ([6,104,20])
+    cylinder (r=1, h =33);
+       
+    }
+           difference ()// extra support
+    {
+    translate ([103,103,2])
+    cube ([8,8,50]);
+    
+    translate ([104,104,20])
+    cylinder (r=1, h =33);
+       
+    }
+    
+        translate ([35.2,89.8,2]) //extra support cylinders
+    cylinder (r=6, h=2);
+    
+     translate ([105,20,2])
+    cylinder (r=6, h=2);
+    
+     translate ([105,89.8,2])
+    cylinder (r=6, h=2);
+    
+        translate ([35.2,20,2])
+    cylinder (r=6, h=2);
 }
